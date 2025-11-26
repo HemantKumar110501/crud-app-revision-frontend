@@ -26,7 +26,7 @@ const AllEmpPage = () => {
 
     }catch(error){
       toast.error("Something Went wrong")
-
+      setIsLoading(false)
     }
   }
 
