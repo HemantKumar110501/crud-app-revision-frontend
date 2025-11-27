@@ -49,12 +49,12 @@ const EditEmpPage = () => {
             let payload = {...empFormData}
             let res = await api.put(`/employees/${id}`,payload)
             console.log(res);
-            // if(res.statusText==="OK"){
-            //     toast.success("Updated Successfully ✅")
-            //     navigate("/all-emp")
-            // }
-            toast.success("Updated Successfully ✅")
-            navigate("/all-emp")
+            if(res.status===201){
+                toast.success("Updated Successfully ✅")
+                navigate("/all-emp")
+            }
+            // toast.success("Updated Successfully ✅")
+            // navigate("/all-emp")
         }catch(err){
             console.log(err);
             toast.error("Unable to Update ❌")
